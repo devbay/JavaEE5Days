@@ -1,6 +1,7 @@
 package com.andrewkravets.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  */
 @Entity
 @Access(AccessType.FIELD)
-public class Patient {
+public class Patient implements Serializable {
     @Id
     @GeneratedValue
     Long id;

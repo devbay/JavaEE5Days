@@ -1,6 +1,7 @@
 package com.andrewkravets.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Andrew Kravets.
@@ -9,8 +10,9 @@ import javax.persistence.*;
  */
 @Entity
 @Access(AccessType.FIELD)
-public class Pills {
-    @Id @GeneratedValue
+public class Pills implements Serializable {
+    @Id
+    @GeneratedValue
     Long id;
 
     String title;

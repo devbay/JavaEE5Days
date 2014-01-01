@@ -10,9 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Day1_JPA_Example</module>
+        <module>Day2_EJB_Example</module>
     </modules>
-
-
-
 
 </project>
