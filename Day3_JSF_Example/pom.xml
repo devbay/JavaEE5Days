@@ -58,7 +58,6 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
                     <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
-                    <containerConfigXML>src\main\webapp\WEB-INF\glassfish-web.xml</containerConfigXML>
                 </configuration>
             </plugin>
         </plugins>
