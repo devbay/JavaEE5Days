@@ -5,7 +5,6 @@ import com.andrewkravets.service.PatientService;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -30,17 +29,17 @@ public class PatientServiceImpl implements PatientService {
     }
 
     public void removePatient(Patient patient) {
-        EntityTransaction transaction = em.getTransaction();
-        transaction.begin();
+        patient = em.merge(patient);
         em.remove(patient);
-        transaction.commit();
     }
 
     public void savePatient(Patient patient) {
-        EntityTransaction transaction = em.getTransaction();
-        transaction.begin();
         em.persist(patient);
-        transaction.commit();
+    }
+
+    @Override
+    public Patient merge(Patient patient) {
+        return em.merge(patient);
     }
 
 }

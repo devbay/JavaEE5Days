@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+    <h:form prependId="false">
+        <h:outputText value="Hospital patients list." />
+        <br/>
+        <h:commandButton value="Add patient" action="#{indexPageBean.editPatient(null)}"/>
+        <p:dataTable value="#{indexPageBean.patients}" var="patient">
+            <p:column headerText="Name">
+                <h:outputText value="#{patient.name}"/>
+            </p:column>
+            <p:column headerText="Sirname">
+                <h:outputText value="#{patient.familyName}"/>
+            </p:column>
+            <p:column headerText="Gender">
+                <h:outputText value="#{patient.gender}"/>
+            </p:column>
+            <p:column headerText="Date of birth">
+                <h:outputText value="#{patient.dateOfBirth}">
+                    <f:convertDateTime type="date" pattern="dd.MM.yyyy"/>
+                </h:outputText>
+            </p:column>
+            <p:column headerText="Options">
+                <h:commandButton value="Edit" action="#{indexPageBean.editPatient(patient)}"/>
+                <h:commandButton value="Delete" action="#{indexPageBean.removePatient(patient)}"/>
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+</html>

@@ -5,6 +5,7 @@ import com.andrewkravets.model.Patient;
 import com.andrewkravets.model.Pills;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
@@ -22,6 +23,7 @@ import static junit.framework.Assert.assertEquals;
  * Date: 12/31/13.
  * Url: andrewkravets.com
  */
+@Ignore
 public class JPATest {
     EntityManagerFactory emf;
     EntityManager em;

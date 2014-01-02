@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+</h:head>
+<h:body>
+    <h:form>
+        <p:panel id="panel" header="Patient" style="margin-bottom:10px;">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="First  name" />
+                <p:inputText id="firstName" required="true" value="#{editPageBean.patient.name}" />
+
+                <h:outputLabel value="Family  name" />
+                <p:inputText id="familyName" required="true" value="#{editPageBean.patient.familyName}" />
+
+                <h:outputLabel value="Sex"/>
+                <p:selectOneMenu id="sex" rendered="true" value="#{editPageBean.patient.gender}">
+                    <f:selectItem itemLabel="Male" itemValue="MALE" />
+                    <f:selectItem itemLabel="Female" itemValue="FEMALE" />
+                </p:selectOneMenu>
+
+                <h:outputLabel value="Birthday date" />
+                <p:calendar value="#{editPageBean.patient.dateOfBirth}" mode="inline"  required="true" id="birthdayDate"/>
+
+                <h:outputText value="Pills"/>
+                <p:pickList value="#{editPageBean.pillsDualListModel}" var="pills" itemValue="#{pills.title}" itemLabel="#{pills.title}" converter="#{editPageBean.pillsConverter}"/>
+
+            </h:panelGrid>
+        </p:panel>
+        <h:commandButton value="Save" action="#{editPageBean.save}" />
+    </h:form>
+</h:body>
+</html>

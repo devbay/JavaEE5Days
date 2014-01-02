@@ -28,11 +28,23 @@ public class Patient implements Serializable {
     @Column(name = "DOB")
     Date dateOfBirth;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Pills> patientsPills;
 
     public String getName() {
         return name;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public String getFamilyName() {
+        return familyName;
     }
 
     public List<Pills> getPatientsPills() {
