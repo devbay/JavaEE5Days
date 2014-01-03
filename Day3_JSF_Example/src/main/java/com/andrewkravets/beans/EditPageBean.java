@@ -52,9 +52,6 @@ public class EditPageBean {
 
         pillsDualListModel = new DualListModel<Pills>(pillsList, patient.getPatientsPills()==null ? new ArrayList<Pills>() : patient.getPatientsPills());
 
-
-
-
         pillsConverter = new Converter() {
             @Override
             public Object getAsObject(FacesContext context, UIComponent component, String value) {
@@ -82,8 +79,6 @@ public class EditPageBean {
     }
 
     public void save() throws IOException {
-        //Patient savePatient = patient;
-        //patientService.savePatient(patientService.merge(savePatient));
         if(FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("patient")==null)
             patientService.savePatient(patient);
         else

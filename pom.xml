@@ -13,6 +13,7 @@
         <module>Day2_EJB_Example</module>
         <module>Day3_JSF_Example</module>
         <module>application_ear</module>
+        <module>Day4_JAX_RS_Example</module>
     </modules>
 
 </project>
