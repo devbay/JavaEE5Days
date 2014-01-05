@@ -14,6 +14,7 @@
         <module>Day3_JSF_Example</module>
         <module>application_ear</module>
         <module>Day4_JAX_RS_Example</module>
+        <module>Day5_JAX_RS_JSON_XML_Example</module>
     </modules>
 
 </project>
